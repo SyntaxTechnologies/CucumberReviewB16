@@ -1,11 +1,11 @@
 -------------------------------------------------------------------------------
 Test set: runners.RunnerClass
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 7.486 s <<< FAILURE! -- in runners.RunnerClass
-Login related scenarios.Valid admin login -- Time elapsed: 6.899 s <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.36 s <<< FAILURE! -- in runners.RunnerClass
+Login related scenarios.Valid admin login -- Time elapsed: 8.859 s <<< FAILURE!
 org.junit.ComparisonFailure: expected:<Welcome Admi[]> but was:<Welcome Admi[n]>
 	at org.junit.Assert.assertEquals(Assert.java:117)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at steps.LoginSteps.user_is_successfully_logged_in_the_application(LoginSteps.java:42)
+	at steps.LoginSteps.user_is_successfully_logged_in_the_application(LoginSteps.java:43)
 	at ✽.user is successfully logged in the application(file:///C:/Users/moazzam/Desktop/anotn/CucumberBatch16Review/src/test/resources/features/login.feature:8)
 
