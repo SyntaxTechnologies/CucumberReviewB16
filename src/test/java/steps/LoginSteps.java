@@ -4,11 +4,12 @@ import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.log4j.xml.DOMConfigurator;
 import org.junit.Assert;
 import utlis.CommonMethods;
 import utlis.ConfigReader;
+import utlis.Log;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,9 @@ public class LoginSteps extends CommonMethods {
 
     @When("user enters valid admin username and password")
     public void user_enters_valid_admin_username_and_password() {
+//        integrate the log4j.xml configuration file into our project
+        DOMConfigurator.configure("log4j.xml");
+        Log.startTestCase("the test case started");
         sendText(ConfigReader.getPropertyValue("username"), loginPage.usernameField);
         sendText(ConfigReader.getPropertyValue("password"), loginPage.passwordField);
 
@@ -33,8 +37,9 @@ public class LoginSteps extends CommonMethods {
 
     @Then("user is successfully logged in the application")
     public void user_is_successfully_logged_in_the_application() {
+        Log.info("the test case is in final step");
         String actualMsg = dash.WelcomeMsg.getText();
-        String expectedMsg = "Welcome Admin";
+        String expectedMsg = "Welcome Admi";
         Assert.assertEquals(expectedMsg, actualMsg);
     }
 
